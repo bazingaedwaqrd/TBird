@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{# 标题图层 #}
+{#{% block title %}#}
+{#    <div class="bc bc-title">唐山市闪电探测和监测预警软硬件系统</div>#}
+{#{% endblock title%}#}
+
+{# GIS图层 #}
+{% block gis %}
+    <div id="map"></div>
+{% endblock gis%}
+
+{# 菜单栏 #}
+{% set menu_name = ['系统配置','图层控制','统计分析','数据查询','雷电外推','意见反馈'] %}
+{% set menu_icon = ['glyphicon glyphicon-cog','glyphicon glyphicon-globe','glyphicon glyphicon-stats','glyphicon glyphicon-search','glyphicon glyphicon-flash','glyphicon glyphicon-thumbs-up'] %}
+{% set menu_target = ['#Modal-0','#Modal-1','#Modal-2','#Modal-3','#Modal-4','#Modal-5'] %}
+{% block menu %}
+    <div class="bc-menu btn-group">
+        {% for name in menu_name %}
+            <button type="button"  class="bc-menu-item btn" data-toggle="modal" data-target="{{ menu_target[loop.index0] }}">
+                <span class="{{ menu_icon[loop.index0] }}"></span>
+                {{ name }}
+            </button>
+        {% endfor %}
+
+    </div>
+
+    {% include 'modals.html' %}
+{% endblock menu%}
+
+{# 页脚footer #}
+{% block footer %}
+    <link href="static/css/styles.css" rel="stylesheet" media="screen">
+    <script src="static/js/custom/webgis.js"></script>
+    <script src="static/js/custom/control.js"></script>
+{% endblock footer%}
+
+

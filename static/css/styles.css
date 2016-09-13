@@ -1,0 +1,19 @@
+.bc-title {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  min-height: 3rem;
+  background: rgba(90, 188, 183, 0.2);
+  width: 100%;
+}
+.bc-menu {
+  z-index: 1;
+  bottom: 0;
+  width: 100%;
+}
+.bc-menu-item {
+  width: 16.66%;
+  color: white;
+  font-weight: bold;
+  background: rgba(0, 0, 0, 0.5);
+}
